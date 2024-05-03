@@ -1,0 +1,25 @@
+name: AGM 24
+
+on:
+  push:
+    branches:
+      - master
+      - unit-test
+
+jobs:
+  dev-environment:
+    runs-on: ubuntu-latest
+    environment: develop
+    steps:
+      - name: Print environment
+        run: |
+          echo "Environment: ${{ vars.ENVIRONMENT }}"
+
+  staging-environment:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Print environment
+        run: |
+          echo "Environment: ${{ vars.ENVIRONMENT }}"
+
